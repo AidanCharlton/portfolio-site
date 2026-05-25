@@ -1,26 +1,14 @@
 import styled from "styled-components";
 
-const ProjectCard = ({
-  image,
-  title,
-  date,
-  descriptionText,
-  url,
-}) => {
+const ProjectCard = ({ image, title, date, descriptionText, url }) => {
   return (
     <Card>
-      <ImageLink
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <ImageLink href={url} target="_blank" rel="noopener noreferrer">
         <ImageContainer>
           {image ? (
             <ProjectImage src={image} alt={title} />
           ) : (
-            <PlaceholderText>
-              Project Screenshot
-            </PlaceholderText>
+            <PlaceholderText>Project Screenshot</PlaceholderText>
           )}
         </ImageContainer>
       </ImageLink>
@@ -65,15 +53,13 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 10px 10px 0px 1px
-    rgba(51, 92, 186, 0.9);
+  box-shadow: 10px 10px 0px 1px rgba(51, 92, 186, 0.9);
   margin-bottom: 24px;
   transition: all 0.2s ease;
 
   &:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 14px 14px 0px 1px
-      rgba(51, 92, 186, 0.9);
+    box-shadow: 14px 14px 0px 1px rgba(51, 92, 186, 0.9);
   }
 `;
 

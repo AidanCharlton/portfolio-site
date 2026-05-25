@@ -1,9 +1,35 @@
 import { useState } from "react";
 import ProjectCard from "../Components/ProjectCard";
-import { LandingWrapper, Sidebar, SidebarButton, MainContent, LandingIntro, ContentSection, SectionLabel, ProjectsContainer, LeftProject, RightProject, CVGroup, CVSectionTitle, CVItem, CVHeader, CVTitle, CVDate, CVSubTitle, CVText, SkillList, SkillTag, AboutText } from "../Styles/Styles";
+import {
+  IntroText,
+  LandingWrapper,
+  Sidebar,
+  SidebarButton,
+  MainContent,
+  ContentSection,
+  SectionLabel,
+  ProjectsContainer,
+  LeftProject,
+  RightProject,
+  CVGroup,
+  CVSectionTitle,
+  CVItem,
+  CVHeader,
+  CVTitle,
+  CVDate,
+  CVSubTitle,
+  CVText,
+  SkillList,
+  SkillTag,
+  CVTopSection,
+  CVName,
+  CVContactRow,
+  CVContactItem,
+  CVContactDivider,
+  CVContactLink,
+} from "../Styles/Styles";
 import stmbus from "../Assets/busgif.gif";
 import skate from "../Assets/skate.gif";
-
 
 const Landing = () => {
   const [activeSection, setActiveSection] = useState("projects");
@@ -27,8 +53,7 @@ const Landing = () => {
 
         {activeSection === "projects" && (
           <ContentSection>
-            <SectionLabel>Projects</SectionLabel>
-
+            <SectionLabel></SectionLabel>
             <ProjectsContainer>
               <LeftProject>
                 <ProjectCard
@@ -55,18 +80,44 @@ const Landing = () => {
 
         {activeSection === "cv" && (
           <ContentSection>
-            <SectionLabel>CV</SectionLabel>
+            <CVTopSection>
+              <CVName>Aidan Charlton</CVName>
 
+              <CVContactRow>
+                <CVContactItem>Montréal, QC</CVContactItem>
+                <CVContactDivider>•</CVContactDivider>
 
-            <CVGroup>
-              <CVSectionTitle>About</CVSectionTitle>
-              <AboutText>
+                <CVContactLink href="mailto:aidan.charlton613@gmail.com">
+                  aidan.charlton613@gmail.com
+                </CVContactLink>
+
+                <CVContactDivider>•</CVContactDivider>
+
+                <CVContactLink
+                  href="https://github.com/aidancharlton"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </CVContactLink>
+
+                <CVContactDivider>•</CVContactDivider>
+
+                <CVContactLink
+                  href="https://www.linkedin.com/in/aidancharlton/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </CVContactLink>
+              </CVContactRow>
+
+              <IntroText>
                 Montréal-based front-end web developer with a background in
-                digital communications, multimedia production, and interactive
-                web-based projects.
-              </AboutText>
-            </CVGroup>
-
+                digital communications, multimedia production, sound design, and
+                interactive browser-based audiovisual projects.
+              </IntroText>
+            </CVTopSection>
 
             <CVGroup>
               <CVSectionTitle>Experience</CVSectionTitle>
@@ -80,16 +131,17 @@ const Landing = () => {
                 <CVSubTitle>Health Canada · Remote</CVSubTitle>
 
                 <CVText>
-                  Coordinated, reviewed, and provided quality assurance for content being
-                  published to Health Canada pages on Canada.ca, helping ensure information
-                  was clear, accurate, accessible, and aligned with Government of Canada web
-                  standards.
+                  Coordinated, reviewed, and provided quality assurance for
+                  content published to Health Canada pages on Canada.ca, helping
+                  ensure information was clear, accurate, accessible, and
+                  aligned with Government of Canada web standards.
                 </CVText>
 
                 <CVText>
-                  Worked with multiple teams and stakeholders to manage incoming publishing
-                  requests, organize web updates, and support the timely delivery of digital
-                  communications and public-facing content.
+                  Worked with multiple teams and stakeholders to manage incoming
+                  publishing requests, organize web updates, and support the
+                  timely delivery of digital communications and public-facing
+                  content.
                 </CVText>
               </CVItem>
 
@@ -109,14 +161,13 @@ const Landing = () => {
                   <SkillTag>Accessibility</SkillTag>
                   <SkillTag>Responsive Design</SkillTag>
                   <SkillTag>Git</SkillTag>
-                  <SkillTag>Netlify</SkillTag>
                 </SkillList>
 
                 <CVText>
-                  Experience building responsive front-end interfaces,
-                  interactive web applications, browser-based audiovisual
-                  systems, and multimedia-focused projects using modern
-                  JavaScript frameworks and web technologies.
+                  Full-stack web development background with experience building
+                  responsive web applications, browser-based musical tools, and
+                  interactive audiovisual systems using the MERN stack and
+                  modern JavaScript frameworks.
                 </CVText>
               </CVItem>
 
@@ -126,9 +177,9 @@ const Landing = () => {
                 </CVHeader>
 
                 <CVText>
-                  Background in audio production, audio engineering, live sound, recording,
-                  mixing, editing, and sound design across music, multimedia, and digital
-                  media projects.
+                  Background in audio production, recording, live sound, mixing,
+                  editing, and sound design across studio, performance, and
+                  multimedia environments.
                 </CVText>
               </CVItem>
             </CVGroup>
@@ -142,11 +193,11 @@ const Landing = () => {
                   <CVDate>2022</CVDate>
                 </CVHeader>
 
-                <CVSubTitle>Concordia University</CVSubTitle>
+                <CVSubTitle>Concordia University, Montreal, QC</CVSubTitle>
 
                 <CVText>
-                  Full-stack web development training focused on the
-                  MERN stack: MongoDB, Express, React, and Node.js.
+                  Full-stack web development training focused on the MERN stack:
+                  MongoDB, Express, React, and Node.js.
                 </CVText>
               </CVItem>
 
@@ -156,12 +207,13 @@ const Landing = () => {
                   <CVDate>2012 – 2017</CVDate>
                 </CVHeader>
 
-                <CVSubTitle>Concordia University</CVSubTitle>
+                <CVSubTitle>Concordia University, Montreal, QC</CVSubTitle>
 
                 <CVText>
-                  Studied sound recording, electroacoustic composition, sound design, and
-                  digital audio production, with a focus on creative and experimental media
-                  practices across studio and live performance environments.
+                  Studied sound recording, electroacoustic composition, sound
+                  design, and digital audio production, with a focus on creative
+                  and experimental media practices across studio and live
+                  performance environments.
                 </CVText>
               </CVItem>
             </CVGroup>
@@ -173,4 +225,3 @@ const Landing = () => {
 };
 
 export default Landing;
-
