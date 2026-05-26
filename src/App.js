@@ -1,31 +1,18 @@
-import Nav from "./Components/Nav";
-import Landing from "./Pages/Landing";
-import styled from "styled-components";
+import Hero from "./Sections/Hero";
+import Projects from "./Sections/Projects";
+import CV from "./Sections/CV";
+import Contact from "./Sections/Contact";
+import SmoothScroll from "./Components/SmoothScroll";
 
-const App = () => {
+function App() {
   return (
-    <AppWrapper>
-      <Nav />
-      <Content>
-        <Landing />
-      </Content>
-    </AppWrapper>
+    <SmoothScroll>
+      <Hero />
+      <Projects />
+      <CV />
+      <Contact />
+    </SmoothScroll>
   );
-};
+}
 
 export default App;
-
-const AppWrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background: #ffffff;
-`;
-
-const Content = styled.main`
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;

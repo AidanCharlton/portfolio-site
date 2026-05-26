@@ -29,14 +29,10 @@ export default ProjectCard;
 
 const Card = styled.div`
   box-sizing: border-box;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 0px;
-  @media (max-width: 900px) {
-    width: 70%;
-  }
+  gap: 22px;
 `;
 
 const ImageLink = styled.a`
@@ -46,20 +42,31 @@ const ImageLink = styled.a`
 
 const ImageContainer = styled.div`
   width: 100%;
-  aspect-ratio: 3.5 / 2;
-  background: rgba(220, 225, 235, 0.7);
-  border: 1px solid rgba(51, 92, 186, 0.9);
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 10px 10px 0px 1px rgba(51, 92, 186, 0.9);
-  margin-bottom: 24px;
-  transition: all 0.2s ease;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  margin-bottom: 10px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 
   &:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 14px 14px 0px 1px rgba(51, 92, 186, 0.9);
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 40px 120px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.06);
   }
 `;
 
@@ -68,53 +75,62 @@ const ProjectImage = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
+
+  filter: saturate(0.85) contrast(1.05);
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+
+  ${ImageContainer}:hover & {
+    transform: scale(1.035);
+    filter: saturate(1) contrast(1.08);
+  }
 `;
 
 const PlaceholderText = styled.p`
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 `;
 
 const ProjectTitle = styled.h2`
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  font-size: clamp(22px, 3vw, 34px);
-  font-weight: 600;
-  color: rgba(51, 92, 186, 0.95);
+  font-size: clamp(26px, 4vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: rgba(245, 245, 245, 0.96);
 `;
 
 const ProjectDate = styled.p`
   margin: 0;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(51, 92, 186, 0.6);
+  color: rgba(255, 255, 255, 0.42);
 `;
 
 const ProjectContent = styled.div`
   width: 100%;
+  max-width: 720px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 const TextColumn = styled.p`
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(20, 20, 20, 0.82);
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.68);
 `;
